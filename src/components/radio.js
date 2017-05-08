@@ -8,7 +8,7 @@ module.exports = function(app) {
         views: [
           {
             name: 'Display',
-            template: 'formio/components/radio/display.html'
+            template: 'formio/components/display.html'
           },
           {
             name: 'Data',
@@ -16,7 +16,7 @@ module.exports = function(app) {
           },
           {
             name: 'Validation',
-            template: 'formio/components/radio/validate.html'
+            template: 'formio/components/validate.html'
           },
           {
             name: 'API',
@@ -136,33 +136,6 @@ module.exports = function(app) {
         }],
         documentation: 'http://help.form.io/userguide/#radio'
       });
-    }
-  ]);
-  app.run([
-    '$templateCache',
-    function($templateCache) {
-      // Create the settings markup.
-      $templateCache.put('formio/components/radio/display.html',
-        '<ng-form>' +
-          '<form-builder-option property="label"></form-builder-option>' +
-          '<form-builder-option property="customClass"></form-builder-option>' +
-          '<form-builder-option property="tabindex"></form-builder-option>' +
-          '<form-builder-option property="inline" type="checkbox" label="Inline Layout" title="Displays the radio buttons horizontally."></form-builder-option>' +
-          '<form-builder-option property="clearOnHide"></form-builder-option>' +
-          '<form-builder-option property="protected"></form-builder-option>' +
-          '<form-builder-option property="persistent"></form-builder-option>' +
-          '<form-builder-option property="hidden"></form-builder-option>' +
-          '<form-builder-option property="disabled"></form-builder-option>' +
-          '<form-builder-option property="tableView"></form-builder-option>' +
-        '</ng-form>'
-      );
-      // Create the API markup.
-      $templateCache.put('formio/components/radio/validate.html',
-        '<ng-form>' +
-          '<form-builder-option property="validate.required"></form-builder-option>' +
-          '<form-builder-option-custom-validation></form-builder-option-custom-validation>' +
-        '</ng-form>'
-      );
     }
   ]);
 };

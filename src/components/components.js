@@ -3,6 +3,21 @@ module.exports = function(app) {
     '$templateCache',
     function($templateCache) {
       // Create the component markup.
+      $templateCache.put('formio/components/display.html',
+        '<ng-form>' +
+          '<form-builder-option property="label"></form-builder-option>' +
+          '<form-builder-option property="customClass"></form-builder-option>' +
+          '<form-builder-option property="tabindex"></form-builder-option>' +
+          '<form-builder-option property="inline" type="checkbox" label="Inline Layout" title="Displays the component horizontally."></form-builder-option>' +
+          '<form-builder-option property="clearOnHide"></form-builder-option>' +
+          '<form-builder-option property="protected"></form-builder-option>' +
+          '<form-builder-option property="persistent"></form-builder-option>' +
+          '<form-builder-option property="hidden"></form-builder-option>' +
+          '<form-builder-option property="disabled"></form-builder-option>' +
+          '<form-builder-option property="tableView"></form-builder-option>' +
+        '</ng-form>'
+      );
+
       $templateCache.put('formio/components/settings.html',
         '<form id="component-settings" novalidate>' +
           '<div class="row">' +
@@ -175,6 +190,13 @@ module.exports = function(app) {
       // Create the common Layout tab markup.
       $templateCache.put('formio/components/common/conditional.html',
         '<form-builder-conditional></form-builder-conditional>'
+      );
+
+      $templateCache.put('formio/components/validate.html',
+        '<ng-form>' +
+          '<form-builder-option property="validate.required"></form-builder-option>' +
+          '<form-builder-option-custom-validation></form-builder-option-custom-validation>' +
+        '</ng-form>'
       );
     }
   ]);

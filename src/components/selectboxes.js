@@ -8,7 +8,7 @@ module.exports = function(app) {
         views: [
           {
             name: 'Display',
-            template: 'formio/components/selectboxes/display.html'
+            template: 'formio/components/display.html'
           },
           {
             name: 'Data',
@@ -16,7 +16,7 @@ module.exports = function(app) {
           },
           {
             name: 'Validation',
-            template: 'formio/components/selectboxes/validate.html'
+            template: 'formio/components/validate.html'
           },
           {
             name: 'API',
@@ -141,34 +141,10 @@ module.exports = function(app) {
   app.run([
     '$templateCache',
     function($templateCache) {
-      // Create the settings markup.
-      $templateCache.put('formio/components/selectboxes/display.html',
-        '<ng-form>' +
-          '<form-builder-option property="label"></form-builder-option>' +
-          '<form-builder-option property="customClass"></form-builder-option>' +
-          '<form-builder-option property="tabindex"></form-builder-option>' +
-          '<form-builder-option property="inline" type="checkbox" label="Inline Layout" title="Displays the checkboxes horizontally."></form-builder-option>' +
-          '<form-builder-option property="clearOnHide"></form-builder-option>' +
-          '<form-builder-option property="protected"></form-builder-option>' +
-          '<form-builder-option property="persistent"></form-builder-option>' +
-          '<form-builder-option property="hidden"></form-builder-option>' +
-          '<form-builder-option property="disabled"></form-builder-option>' +
-          '<form-builder-option property="tableView"></form-builder-option>' +
-        '</ng-form>'
-      );
-
       // Create the API markup.
       $templateCache.put('formio/components/selectboxes/api.html',
         '<ng-form>' +
           '<form-builder-option-key></form-builder-option-key>' +
-        '</ng-form>'
-      );
-
-      // Create the API markup.
-      $templateCache.put('formio/components/selectboxes/validate.html',
-        '<ng-form>' +
-          '<form-builder-option property="validate.required"></form-builder-option>' +
-          '<form-builder-option-custom-validation></form-builder-option-custom-validation>' +
         '</ng-form>'
       );
     }
